@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "FPSWrapper.h"
+#include "Timer.h"
 #include "Configuration.h"
 #include <cassert>
 #include "Util.h"
@@ -78,7 +78,6 @@ Game::Game() :
 	this->pauseSelector->setWidth(50);
 
 	this->isRunning = true;
-	FPSWrapper::initialize(this->fpsManager);
 }
 
 Game::~Game(){
@@ -114,6 +113,7 @@ void Game::runGame(){
 	this->currentState->load();
 
 	// Get the first game time.
+	Timer timer{};
 	double totalGameTime = 0.0;
 	const double deltaTime = 1.0 / 60.0;
 	double accumulatedTime = 0.0;
@@ -121,7 +121,7 @@ void Game::runGame(){
 	// This is the main game loop.
 	while(this->isRunning){
 
-		const double frameTime = FPSWrapper::delay(this->fpsManager);
+		const double frameTime = timer.GetFrameTime();
 		accumulatedTime += frameTime;
 
 		// Update.
@@ -178,7 +178,8 @@ void Game::runGame(){
 		this->fadeScreen->render();
 
 		window->render();
-		
+
+		timer.Reset();
 	}
 
 }

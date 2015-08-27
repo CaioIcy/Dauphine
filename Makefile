@@ -20,9 +20,9 @@ LINK_LIBS := -L$(LUA_LIBDIR) -L$(LIB_DIR) $(LUA_LINK) -lm -ltmxparser -ltinyxml 
 # Compiler
 export LD := $(CXX)
 # Compiler flags
-CPPFLAGS=-O2 -g -W -Wall -pedantic -ansi -std=c++0x -Wextra -Wshadow
+CPPFLAGS=-O2 -g -W -Wall -pedantic -ansi -std=c++11 -Wextra -Wshadow
 # Linking flags
-LDFLAGS = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer -lSDL2_gfx -lSDL2_ttf -lstdc++ $(LINK_LIBS)
+LDFLAGS = -lSDL2 -lSDL2_ttf -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lstdc++ $(LINK_LIBS)
 
 # Target program name
 TARGET := Dauphine
