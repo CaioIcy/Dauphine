@@ -79,6 +79,7 @@ void Sprite::render(const double x_, const double y_, SDL_Rect* const clip_,
 	
 	if(successfullRender != 0){
 		Log(ERROR) << "Failed to render sprite." << SDL_GetError();
+		assert(false && "Failed to render sprite");
 	}
 }
 

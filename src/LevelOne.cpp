@@ -27,7 +27,7 @@ void LevelOne::load(){
 	Log(DEBUG) << "Loading level 1...";
 
 	// Loading the tile/tilemap.
-	this->tileMap = new TileMap("res/maps/level1.tmx");
+	this->tileMap = new TileMap("assets/maps/level1.tmx");
 
 	// Setting the level width/height.
 	this->width = this->tileMap->getMapWidth();
@@ -35,10 +35,10 @@ void LevelOne::load(){
 	SDL_Rect bounds = {0, 0, (int)this->width, (int)this->height};
 	this->quadTree = new QuadTree(0, bounds);
 
-	this->background = Game::instance().getResources().get("res/images/lv1_background_parallax.png");
-	this->backgroundTop = Game::instance().getResources().get("res/images/lv1_parallax_top.png");
+	this->background = Game::instance().getResources().get("assets/images/lv1_background_parallax.png");
+	this->backgroundTop = Game::instance().getResources().get("assets/images/lv1_parallax_top.png");
 	for(int i = 0; i < this->NUMBER_OF_CHECKPOINTS; ++i){
-		this->checkpoints.push_back(Game::instance().getResources().get("res/images/checkpoint.png"));
+		this->checkpoints.push_back(Game::instance().getResources().get("assets/images/checkpoint.png"));
 	}
 
 	// Getting information from lua script.
@@ -72,7 +72,7 @@ void LevelOne::load(){
 	Camera* lCamera = new Camera(lPlayer); 
 	
 	// Loading the refill of potion.
-	this->image = Game::instance().getResources().get("res/images/potion.png");
+	this->image = Game::instance().getResources().get("assets/images/potion.png");
 	
 	this->playerHud = new PlayerHUD(lPlayer);
 
@@ -230,7 +230,7 @@ void LevelOne::update(const double dt_){
 		if(!this->checkpointsVisited[j] && this->player->getBoundingBox().x >= checkpointsX[j] 
 				&& this->player->getBoundingBox().x <= checkpointsX[j] + 100 && this->player->getBoundingBox().y >= checkpointsY[j]
 				&& this->player->getBoundingBox().y <= checkpointsY[j] + 200){
-			this->checkpoints[j] = Game::instance().getResources().get("res/images/checkpoint_visited.png");
+			this->checkpoints[j] = Game::instance().getResources().get("assets/images/checkpoint_visited.png");
 			Game::instance().getSaves().saveLevel(1, this->player, this->enemies, Game::instance().currentSlot);
 			this->checkpointsVisited[j] = true;
 		}	

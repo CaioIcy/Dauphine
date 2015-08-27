@@ -1,7 +1,7 @@
 #ifndef INCLUDE_TILEMAP_H
 #define INCLUDE_TILEMAP_H
 
-#include "../lib/TmxParser/Tmx.h"
+#include "../externals/TmxParser/Tmx.h"
 #include "Sprite.h"
 #include <vector>
 #include "CollisionRect.h"

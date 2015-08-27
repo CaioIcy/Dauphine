@@ -18,8 +18,8 @@ GStateTransition::~GStateTransition(){
 void GStateTransition::load(){
 	Log(DEBUG) << "Loading transition...";
 
-	this->loading = Game::instance().getResources().get("res/images/loading.png");
-	this->point = Game::instance().getResources().get("res/images/point.png");
+	this->loading = Game::instance().getResources().get("assets/images/loading.png");
+	this->point = Game::instance().getResources().get("assets/images/point.png");
 
 	if(this->loading == nullptr){
 		Log(WARN) << "Unable to load transition loading image.";

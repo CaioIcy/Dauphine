@@ -1,6 +1,6 @@
 continue = {
 	images = {
-		background = "res/images/load_background.png",
-		selector = "res/images/load_selector.png",
+		background = "assets/images/load_background.png",
+		selector = "assets/images/load_selector.png",
 	},
 }

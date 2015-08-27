@@ -1,4 +1,0 @@
-\select@language {brazil}
-\contentsline {chapter}{\numberline {1}Objetivo}{4}{chapter.1}
-\contentsline {chapter}{\numberline {2}Est\IeC {\'o}ria}{6}{chapter.2}
-\contentsline {chapter}{\numberline {3}Controle}{10}{chapter.3}

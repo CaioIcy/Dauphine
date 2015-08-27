@@ -1,6 +1,6 @@
 gameOver = {
 	images = {
-		gameOver = "res/images/gameOver.png",
+		gameOver = "assets/images/gameOver.png",
 	},
 	
 	lifeTime = 12.0

@@ -5,7 +5,7 @@
 
 PlayerHUD::PlayerHUD(Player* const player_):
 	player(player_),
-	potionsLeft(new Text(200.0, 25.0, "res/fonts/maturasc.ttf", 50, "Potions: x"))
+	potionsLeft(new Text(200.0, 25.0, "assets/fonts/maturasc.ttf", 50, "Potions: x"))
 {
 	for(unsigned int i = 0; i < TOTAL_HUD; i++){
 		this->playerHudSprites[i] = nullptr;
@@ -63,9 +63,9 @@ void PlayerHUD::render(){
 }
 
 void PlayerHUD::initializeSprites(){
-	this->playerHudSprites[0] = Game::instance().getResources().get("res/images/hud/health_0.png");
-	this->playerHudSprites[1] = Game::instance().getResources().get("res/images/hud/health_33.png");
-	this->playerHudSprites[2] = Game::instance().getResources().get("res/images/hud/health_66.png");
-	this->playerHudSprites[3] = Game::instance().getResources().get("res/images/hud/health_99.png");
-	this->playerHudSprites[4] = Game::instance().getResources().get("res/images/hud/hud_no_health.png");	
+	this->playerHudSprites[0] = Game::instance().getResources().get("assets/images/hud/health_0.png");
+	this->playerHudSprites[1] = Game::instance().getResources().get("assets/images/hud/health_33.png");
+	this->playerHudSprites[2] = Game::instance().getResources().get("assets/images/hud/health_66.png");
+	this->playerHudSprites[3] = Game::instance().getResources().get("assets/images/hud/health_99.png");
+	this->playerHudSprites[4] = Game::instance().getResources().get("assets/images/hud/hud_no_health.png");	
 }

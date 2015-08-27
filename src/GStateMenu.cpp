@@ -40,7 +40,7 @@ void GStateMenu::load(){
 	// Changing the music.
 	Game::instance().clearKeyFromInput(GameKeys::ESCAPE);
 
-	Game::instance().getAudioHandler().changeMusic("res/audio/menu.mid");
+	Game::instance().getAudioHandler().changeMusic("assets/audio/menu.mid");
 
 	LuaScript luaMenu("lua/Menu.lua");
 	const std::string pathTitleScreen = luaMenu.unlua_get<std::string>("menu.images.titleScreen");
@@ -48,11 +48,11 @@ void GStateMenu::load(){
 
     this->menuImage = Game::instance().getResources().get(pathTitleScreen);
     this->menuSelector = Game::instance().getResources().get(pathCursor);
-    this->attractModeBg = Game::instance().getResources().get("res/images/title_background.png");
-    this->attractMode = Game::instance().getResources().get("res/images/attract.png");
+    this->attractModeBg = Game::instance().getResources().get("assets/images/title_background.png");
+    this->attractMode = Game::instance().getResources().get("assets/images/attract.png");
     this->attractClip.w = this->attractMode->getWidth();
     this->shwingAnimation = new Animation(0, 0, 795, 360, 3, false);
-    this->shwing = Game::instance().getResources().get("res/images/shwing_sheet.png");
+    this->shwing = Game::instance().getResources().get("assets/images/shwing_sheet.png");
     this->shwingAnimation->ANIMATION_LIMIT = 2;
 
     Game::instance().getFade().fadeOut(0, 0.002);

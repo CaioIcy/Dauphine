@@ -23,10 +23,10 @@ LevelFive::~LevelFive(){
 
 void LevelFive::load(){
 	// Changing the music.
-	Game::instance().getAudioHandler().changeMusic("res/audio/lv5.wav");
+	Game::instance().getAudioHandler().changeMusic("assets/audio/lv5.wav");
 
 	// Loading the tile/tilemap.
-	this->tileMap = new TileMap("res/maps/level5.tmx");
+	this->tileMap = new TileMap("assets/maps/level5.tmx");
 
 	// Setting the level width/height.
 	this->width = this->tileMap->getMapWidth();
@@ -34,11 +34,11 @@ void LevelFive::load(){
 	SDL_Rect bounds = {0, 0, (int)this->width, (int)this->height};
 	this->quadTree = new QuadTree(0, bounds);
 
-	this->background = Game::instance().getResources().get("res/images/lv1_background.png");
+	this->background = Game::instance().getResources().get("assets/images/lv1_background.png");
 	for(int i = 0; i < this->NUMBER_OF_CHECKPOINTS; ++i){
-		this->checkpoints.push_back(Game::instance().getResources().get("res/images/checkpoint.png"));
+		this->checkpoints.push_back(Game::instance().getResources().get("assets/images/checkpoint.png"));
 	}
-	this->image = Game::instance().getResources().get("res/images/potion.png");
+	this->image = Game::instance().getResources().get("assets/images/potion.png");
 
 	// Getting information from lua script.
 	LuaScript luaLevel1("lua/Level1.lua");
@@ -85,13 +85,13 @@ void LevelFive::load(){
 	}
 
 	// Documents
-	Document* document4 = new Document(143*64, 35*64, "res/images/documentSprite.png", "res/images/Documents/d4.png");
+	Document* document4 = new Document(143*64, 35*64, "assets/images/documentSprite.png", "assets/images/Documents/d4.png");
 	this->documents.push_back(document4);
 
-	Document* document5 = new Document(143*64, 35*64, "res/images/documentSprite.png", "res/images/Documents/d5.png");
+	Document* document5 = new Document(143*64, 35*64, "assets/images/documentSprite.png", "assets/images/Documents/d5.png");
 	this->documents.push_back(document5);
 
-	Document* document6 = new Document(143*64, 35*64, "res/images/documentSprite.png", "res/images/Documents/d6.png");
+	Document* document6 = new Document(143*64, 35*64, "assets/images/documentSprite.png", "assets/images/Documents/d6.png");
 	this->documents.push_back(document6);
 
 	// Finally, setting the player and the camera.
@@ -231,7 +231,7 @@ void LevelFive::update(const double dt_){
 		if(!this->checkpointsVisited[j] && this->player->getBoundingBox().x >= checkpointsX[j] 
 				&& this->player->getBoundingBox().x <= checkpointsX[j] + 100 && this->player->getBoundingBox().y >= checkpointsY[j]
 				&& this->player->getBoundingBox().y <= checkpointsY[j] + 200){
-			this->checkpoints[j] = Game::instance().getResources().get("res/images/checkpoint_visited.png");
+			this->checkpoints[j] = Game::instance().getResources().get("assets/images/checkpoint_visited.png");
 			Game::instance().getSaves().saveLevel(5, this->player, this->enemies, Game::instance().currentSlot);
 			this->checkpointsVisited[j] = true;
 		}	

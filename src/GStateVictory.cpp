@@ -18,11 +18,11 @@ void GStateVictory::load(){
 	Log(DEBUG) << "Loading victory...";
 
 
-    this->victoryImage = Game::instance().getResources().get("res/images/victory.png");
+    this->victoryImage = Game::instance().getResources().get("assets/images/victory.png");
 	this->lifeTime = 5.0;
 
 	// Changing the music.
-	Game::instance().getAudioHandler().changeMusic("res/audio/Tema_Victory_01.wav");
+	Game::instance().getAudioHandler().changeMusic("assets/audio/Tema_Victory_01.wav");
 }
 
 void GStateVictory::unload(){

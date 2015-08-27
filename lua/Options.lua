@@ -1,6 +1,6 @@
 options = {
 	images = {
-		dummy = "res/images/options.png",
-		cursor = "res/images/cursor_regular.png",
+		dummy = "assets/images/options.png",
+		cursor = "assets/images/cursor_regular.png",
 	}
 }

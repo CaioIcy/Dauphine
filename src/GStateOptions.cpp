@@ -24,9 +24,9 @@ GStateOptions::GStateOptions() :
 	volumeMusic(nullptr),
 	volumeSFX(nullptr)	
 {
-	this->resolution = new Text(830.0, 365.0, "res/fonts/maturasc.ttf", 45, possibleResolutions[currentResolution].c_str());
-	this->volumeMusic = new Text(830.0, 468.0, "res/fonts/maturasc.ttf", 45, Util::toString(this->musicVolume).c_str());
-	this->volumeSFX = new Text(830.0, 580.0, "res/fonts/maturasc.ttf", 45, Util::toString(this->sfxVolume).c_str());
+	this->resolution = new Text(830.0, 365.0, "assets/fonts/maturasc.ttf", 45, possibleResolutions[currentResolution].c_str());
+	this->volumeMusic = new Text(830.0, 468.0, "assets/fonts/maturasc.ttf", 45, Util::toString(this->musicVolume).c_str());
+	this->volumeSFX = new Text(830.0, 580.0, "assets/fonts/maturasc.ttf", 45, Util::toString(this->sfxVolume).c_str());
 }
 
 GStateOptions::~GStateOptions(){

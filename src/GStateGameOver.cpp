@@ -27,7 +27,7 @@ void GStateGameOver::load(){
 	this->lifeTime = luaLifeTime;
 
 	// Changing the music.
-	Game::instance().getAudioHandler().changeMusic("res/audio/Game_Over.mid");
+	Game::instance().getAudioHandler().changeMusic("assets/audio/Game_Over.mid");
 }
 
 void GStateGameOver::unload(){

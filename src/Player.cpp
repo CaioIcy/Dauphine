@@ -29,7 +29,7 @@ Player::Player(const double x_, const double y_, const std::string& path_) :
     DynamicEntity(x_, y_, path_),
     potionsLeft(3),
     maxPotions(3),
-    crosshair(new Crosshair(0.0, 0.0, "res/images/alvo.png")),
+    crosshair(new Crosshair(0.0, 0.0, "assets/images/alvo.png")),
     life(3),
     attackStrength(50),
     canAttack(true),
@@ -192,7 +192,7 @@ void Player::usePotion(const int strength_, const int distance_){
     if(this->potionsLeft > 0){
         this->potionsLeft--;
         const double potionX = ((this->isRight) ? this->boundingBox.x + this->boundingBox.w : this->boundingBox.x);
-        Potion* potion = new Potion(potionX , this->y, "res/images/explosion_with_potion.png", strength_, this->vx, distance_, this->isRight);
+        Potion* potion = new Potion(potionX , this->y, "assets/images/explosion_with_potion.png", strength_, this->vx, distance_, this->isRight);
         this->potions.push_back(potion);
     }
 }

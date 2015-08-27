@@ -10,7 +10,7 @@ void PStateAttack::enter(){
 
 	this->player->getAnimation()->changeAnimation(1, 7, 14, false, 0.466);
 
-	Game::instance().getAudioHandler().addSoundEffect("res/audio/FX_NADINE/WOOSH_NADINE_02.wav");
+	Game::instance().getAudioHandler().addSoundEffect("assets/audio/FX_NADINE/WOOSH_NADINE_02.wav");
 }
 
 void PStateAttack::exit(){

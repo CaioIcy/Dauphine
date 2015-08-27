@@ -3,7 +3,7 @@
 #include "Logger.h"
 
 FadeScreen::FadeScreen() :
-	fadeImage(Game::instance().getResources().get("res/images/black_screen.png")),
+	fadeImage(Game::instance().getResources().get("assets/images/black_screen.png")),
 	fadeHandler(new FadeHandler(this->fadeImage))
 {
 

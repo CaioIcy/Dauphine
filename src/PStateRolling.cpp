@@ -11,7 +11,7 @@ void PStateRolling::enter(){
 	this->player->getAnimation()->changeAnimation(6, 4, 9, true, 0.6);
 	this->player->roll();
 
-	Game::instance().getAudioHandler().addSoundEffect("res/audio/FX_NADINE/ROLLING_NADINE_01.wav");
+	Game::instance().getAudioHandler().addSoundEffect("assets/audio/FX_NADINE/ROLLING_NADINE_01.wav");
 }
 
 void PStateRolling::exit(){

@@ -1,4 +1,4 @@
 dialog = {
 
-	dialog = "res/images/Dialog",
+	dialog = "assets/images/Dialog",
 }

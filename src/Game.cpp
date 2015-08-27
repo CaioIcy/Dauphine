@@ -61,7 +61,7 @@ Game::Game() :
 
 	initializeStates();
 
-	std::string path = "res/images/Dialog/dialog";
+	std::string path = "assets/images/Dialog/dialog";
 	std::string extension = ".png";	
 
 	for(int i = 0; i < numLines; i++){
@@ -73,8 +73,8 @@ Game::Game() :
 		}
 	}
 
-	this->pauseImage = getResources().get("res/images/pause_overlay.png");
-	this->pauseSelector = getResources().get("res/images/cursor_regular.png");
+	this->pauseImage = getResources().get("assets/images/pause_overlay.png");
+	this->pauseSelector = getResources().get("assets/images/cursor_regular.png");
 	this->pauseSelector->setWidth(50);
 
 	this->isRunning = true;

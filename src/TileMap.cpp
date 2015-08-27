@@ -39,7 +39,7 @@ void TileMap::load(const std::string& mapPath_){
 				metaTileset = tileSet;
 			}
 
-			addTileSet("res/maps/" + tileSet->GetImage()->GetSource());
+			addTileSet("assets/maps/" + tileSet->GetImage()->GetSource());
 		}
 
 		if(metaTileset == nullptr){

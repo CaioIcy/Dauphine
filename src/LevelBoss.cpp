@@ -20,10 +20,10 @@ LevelBoss::~LevelBoss(){
 void LevelBoss::load(){
 	Log(DEBUG) << "Loading level boss...";
 
-	Game::instance().getAudioHandler().changeMusic("res/audio/Tema_Boss_02.wav");
+	Game::instance().getAudioHandler().changeMusic("assets/audio/Tema_Boss_02.wav");
 
 	// Loading the tile/tilemap.
-	this->tileMap = new TileMap("res/maps/levelBoss.tmx");
+	this->tileMap = new TileMap("assets/maps/levelBoss.tmx");
 
 	// Setting the level width/height.
 	this->width = this->tileMap->getMapWidth();
@@ -31,7 +31,7 @@ void LevelBoss::load(){
 	SDL_Rect bounds = {0, 0, (int)this->width, (int)this->height};
 	this->quadTree = new QuadTree(0, bounds);
 
-	this->background = Game::instance().getResources().get("res/images/lv1_background.png");
+	this->background = Game::instance().getResources().get("assets/images/lv1_background.png");
 
 	// Getting information from lua script.
 	LuaScript luaLevel1("lua/Level1.lua");
@@ -50,11 +50,11 @@ void LevelBoss::load(){
 
 	this->playerHud = new PlayerHUD(lPlayer);
 
-	Boss* lBoss = new Boss(1200, 684.0, "res/images/boss_sheet.png", lPlayer);
+	Boss* lBoss = new Boss(1200, 684.0, "assets/images/boss_sheet.png", lPlayer);
 	lBoss->getAnimation()->changeAnimation(0,0,1,false,0.0);
 	
 	// Test text.
-	// Text* text = new Text(200.0, 900.0, "res/fonts/KGFeeling22.ttf", 50, "dauphine");
+	// Text* text = new Text(200.0, 900.0, "assets/fonts/KGFeeling22.ttf", 50, "dauphine");
 	// addEntity(text);
 
 	// Finally, setting the player, the boss and the camera.

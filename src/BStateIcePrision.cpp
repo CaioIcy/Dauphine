@@ -8,7 +8,7 @@ double prisionTime = 0.0;
 
 void BStateIcePrision::enter(){
 	// Log(DEBUG) << "STATE ICE PRISION BOSS";
-	this->boss->power = Game::instance().getResources().get("res/images/ice_prision.png");
+	this->boss->power = Game::instance().getResources().get("assets/images/ice_prision.png");
 	this->boss->powerAnimation->changeWidthHeight(340,1020);
 	this->boss->powerAnimation->changeAnimation(0, 0, 2, false, 0.5);
 	this->boss->vx = 0;

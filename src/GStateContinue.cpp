@@ -12,9 +12,9 @@ GStateContinue::GStateContinue() :
 	selectorXPosition(562),
 	selectorYPosition {500,610,723}
 {
-	this->slot1 = new Text(615.0, 520.0, "res/fonts/maturasc.ttf", 45, "Empty Slot");
-	this->slot2 = new Text(615.0, 630.0, "res/fonts/maturasc.ttf", 45, "Empty Slot");
-	this->slot3 = new Text(615.0, 730.0, "res/fonts/maturasc.ttf", 45, "Empty Slot");
+	this->slot1 = new Text(615.0, 520.0, "assets/fonts/maturasc.ttf", 45, "Empty Slot");
+	this->slot2 = new Text(615.0, 630.0, "assets/fonts/maturasc.ttf", 45, "Empty Slot");
+	this->slot3 = new Text(615.0, 730.0, "assets/fonts/maturasc.ttf", 45, "Empty Slot");
 }
 
 GStateContinue::~GStateContinue(){

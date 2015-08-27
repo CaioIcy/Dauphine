@@ -53,7 +53,7 @@ Boss::Boss(const double x_, const double y_, const std::string& path_, Player* c
 	this->animation = new Animation(0, 0, this->width, this->height, 7, false);
 	this->powerAnimation = new Animation(0, 0, 0, 0, 0, false);
 	this->shieldAnimation = new Animation(0, 0, 340, 340, 6, false);
-	this->shield = Game::instance().getResources().get("res/images/shield.png");
+	this->shield = Game::instance().getResources().get("assets/images/shield.png");
 	this->shieldAnimation->changeAnimation(0,0,3,false,1);
 	this->currentState = this->statesMap.at(IDLE);
 	this->currentState->enter();
@@ -206,7 +206,7 @@ void Boss::usePotion(const int strength_, const int distance_){
     if(this->potionsLeft > 0){
         this->potionsLeft--;
         const double potionX = ((this->isRight) ? this->boundingBox.x + this->boundingBox.w : this->boundingBox.x);
-        Potion* potion = new Potion(potionX , this->y, "res/images/potion.png", strength_, this->vx, distance_, this->isRight);
+        Potion* potion = new Potion(potionX , this->y, "assets/images/potion.png", strength_, this->vx, distance_, this->isRight);
         this->potions.push_back(potion);
     }
 }

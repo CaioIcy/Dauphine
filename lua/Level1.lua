@@ -1,13 +1,13 @@
 level = {
 
 	audio = {
-		background = "res/audio/lv1.wav",
+		background = "assets/audio/lv1.wav",
 	},
 
 	player = {
-	    spriteSheet = "res/images/spriteSheet_nadine.png",
+	    spriteSheet = "assets/images/spriteSheet_nadine.png",
 	},
 
-	enemy = "res/images/enemySheet.png",
+	enemy = "assets/images/enemySheet.png",
 
 }
