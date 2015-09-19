@@ -2,13 +2,13 @@
 
 \section{Métricas de Código Fonte}
 
-Segundo \citeonline{mills1988}, métrica de \textit{software} lida com a medição do produto e do processo de \textit{software}. No trabalho da disciplina, serão coletadas apenas métricas de código fonte que seguirão os padrões sugeridos na tese de doutorado do Dr. Paulo Meirelles. Dentre as métricas que Meirelles selecionou, foram escolhidas as seguintes métricas
+Segundo \citeonline{mills1988}, métrica de \textit{software} lida com a medição do produto e do processo de \textit{software}. No trabalho da disciplina, serão coletadas apenas métricas de código fonte que seguirão os intervalos sugeridos na tese de doutorado do Dr. Paulo Meirelles. Dentre as métricas que \citeonline{prmm} selecionou, foram escolhidas as seguintes métricas
 
 \begin{itemize}
-\item AMLOC (\textit{Average Method Lines of Code} - Média de linhas de código por método)
-\item NOM (\textit{Number Of Methods} - Número de métodos)
-\item NPM (\textit{Number of Public Methods} - Número de métodos públicos)
-\item ANPM (\textit{Average Number of Parameters per Method} - Média de parâmetros por método)
-\item ACCM (\textit{Average Ciclomatic Complexity per Method} - Média de complexidade ciclomática por métodos)
-\item LCOM (\textit{Lack of Cohesion in Methods} - Ausência de coesão em métodos). 
+\item \textbf{AMLOC }(\textit{Average Method Lines of Code} - Média de linhas de código por método): A medida indica a quantidade de linhas de código por método, indicando se o código está bem distribuído ou não, auxiliando assim na manutenção do mesmo.
+\item \textbf{NOM }(\textit{Number Of Methods} - Número de métodos): Em geral, classes com muitos métodos não são muito coesas, dificultando assim o reuso das mesmas \cite{lorenzkidd}. Esta medida indica
+\item \textbf{NPM }(\textit{Number of Public Methods} - Número de métodos públicos): Boas práticas de programação dizem que o número de métodos em cada classe não pode ser muito grande \cite{beck}. Valores altos dessa métrica indicam que uma classe possui muitas responsabilidade por possuirem muitos métodos.
+\item \textbf{ANPM }(\textit{Average Number of Parameters per Method} - Média de parâmetros por método): Se um método possui essa medida muito alta, este método pode ter mais de uma função e deve ser refatorado.
+\item \textbf{ACCM }(\textit{Average Ciclomatic Complexity per Method} - Média de complexidade ciclomática por métodos): Esta métrica representa um grafo de fluxo de controle. \citeonline{myers}, \citeonline{mccabe} e \citeonline{stetter} propuseram várias fórmulas de calcular a complexidade ciclomática desse grafo.
+\item \textbf{LCOM }(\textit{Lack of Cohesion in Methods} - Ausência de coesão em métodos): Originalmente proposta por \citeonline{chidamberkemerer} e depois revista por \citeonline{hitzmontazeri}, o LCOM4 mede a coesão nos métodos. Métodos pouco coesos são pouco reutilizáveis e ferem as boas práticas de programação \cite{beck}.
 \end{itemize}
