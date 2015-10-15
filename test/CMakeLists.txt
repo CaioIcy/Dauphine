@@ -21,6 +21,7 @@ message(AUTHOR_WARNING "Getting test source files by using glob")
 file(GLOB_RECURSE TESTS_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
 
 add_executable(${GtestTarget} ${TESTS_FILES})
+set_target_properties(${GtestTarget} PROPERTIES COMPILE_FLAGS "${FLAGS_MY_PROJECT}")
 target_link_libraries(${GtestTarget} )
 
 target_link_libraries(${GtestTarget}

@@ -8,7 +8,7 @@ function attention_echo {
 }
 
 # Default project name (no spaces)
-NAME_PROJECT="Default_Project_Name"
+NAME_PROJECT="Dauphine"
 # If there is a T_NAME_PROJECT, assign it to NAME_PROJECT
 if [ ! -z $T_NAME_PROJECT ]
 then
@@ -32,6 +32,7 @@ attention_echo "TIMED_RUN='$TIMED_RUN'"
 ARG_BUILD_DEBUG="debug"
 ARG_BUILD_RELEASE="release"
 ARG_CLEAN="clean"
+ARG_TEST="test"
 
 # Some directories
 DIR_PROJECT_ROOT=$(dirname "$(readlink -f $0)")
@@ -58,6 +59,16 @@ function build {
 			-DMY_TIMED_RUN_ENABLED=${TIMED_RUN}\
 			${DIR_PROJECT_ROOT} || exit $?
 
+	# Target is for test only
+	elif [ $1 == "Do${ARG_TEST}" ]
+	then		
+		attention_echo "Using CMake (build mode Release)"
+		cmake -DSH_NAME_PROJECT=${NAME_PROJECT}\
+			-DCMAKE_BUILD_TYPE=Release\
+			-DMY_TIMED_RUN_ENABLED=${TIMED_RUN}\
+			-DMY_ONLY_TESTS="ON"\
+			${DIR_PROJECT_ROOT} || exit $?
+
 	# Invalid target for argument
 	else
 		attention_echo "Invalid parameter of '$1'"
@@ -69,6 +80,7 @@ function build {
 
 	# Copy the executable to root, instead of copying the entire assets folder to build/src/
 	cp ./src/*_exec ../
+	cp ./test/*_GTest ../
 
 	popd
 	success_exit
@@ -138,6 +150,11 @@ then
 	elif [ $1 == "${ARG_BUILD_RELEASE}" ]
 	then
 		build "Do${ARG_BUILD_RELEASE}"
+
+	# Only build the test executable
+	elif [ $1 == "${ARG_TEST}" ]
+	then
+		build "Do${ARG_TEST}"
 
 	# Clean the workspace
 	elif [ $1 == "${ARG_CLEAN}" ]

@@ -22,8 +22,13 @@ include("${MY_CMAKE_DIR}/doxygen.cmake")
 
 ##################################################
 
-add_subdirectory(src/)
-
-if(MY_TESTS_ENABLED)
-	add_subdirectory(test/)
+if(MY_ONLY_TESTS)
+	if(MY_TESTS_ENABLED)
+		add_subdirectory(test/)
+	endif()
+else()
+	add_subdirectory(src/)
+	if(MY_TESTS_ENABLED)
+		add_subdirectory(test/)
+	endif()
 endif()

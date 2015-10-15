@@ -100,3 +100,4 @@ CTestTestfile.cmake
 test/gtest/
 *_exec
 *_GTest
+log
