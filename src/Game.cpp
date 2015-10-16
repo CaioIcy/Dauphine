@@ -121,6 +121,13 @@ void Game::runGame(){
 	// This is the main game loop.
 	while(this->isRunning){
 
+#ifdef ICYTIMEDRUN
+		// Auto-close the game in 2 seconds so TravisCI doesn't loop forever
+		if(totalGameTime >= 2.0) {
+			this->isRunning = false;
+		}
+#endif
+
 		const double frameTime = timer.GetFrameTime();
 		accumulatedTime += frameTime;
 
