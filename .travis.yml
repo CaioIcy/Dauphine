@@ -18,6 +18,8 @@ env:
     # Valgrind run of the project will automatically close in a couple of seconds
     - T_DO_TIMED_RUN=ON
 
+sudo: required
+
 before_install:
     - ./utils/travis/before_install.sh
 
