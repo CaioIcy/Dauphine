@@ -1,0 +1,30 @@
+language: cpp
+
+compiler:
+    - gcc
+
+env:
+  global:
+    # Encrypted personal access token
+    - secure: r7DMairxFjMKspamYQ4wFh7bsE+V5rleAwX7jePYlR6rmnVjJAvlndM2t090PgPTqB5FDiFdLaC5Ds6f9gU96AUgKz3fGEDV4Aa4fmhRAG3J6y8GlE9uDwzsR+9STwgkJtoEgRaxjFadOl1GT0MGIW1TOeOyjUfWkU4eXDCManZ0O2rlKspsawp3SYhW0bOGB2AfrllMmr2gmupHmvX47S4VXQ+2Jt8QPg7xV+DkworMEmVxeYCgOXQbcCaypOjadxGmiSyrnPHFl9ei/pZ52ECjMorGvhVRcwVO1fx/0LeR2NhieT1tkpVnAJikU3NEJuKjlSDuJmu2t00H4clnyA55jJCmLzHTgt8+vb0nJO/47EHpR5v36Pmv/jgJamacZc6xwDjpbtuDzDXX4sCvFaBVE6hTHton24BeeFFcb/sBOr9gymlpaJxw/p6XgtZMbBbdisihHJrA3cI4e2BIORczUpPQZK/cYAfU0pdd1fzuIKsKo7bZ/3ZoAe7SaSgksVyG5DrH78YoN39Py5cMEys9CbQghEyBVIW5tg2sNc1uyRuhnYm/OgrW8nucVAI0U53Bj+njr4PK7cNFzoESUg3HwM8ZxXS5JyY2iJCuGcQ8k+k44hi84FLE38wHJSazMP0IlmJXvD5z5kSOTgbhYxUljQlF1/27z71WrRcx1/8=
+    # GitHub user name
+    - GH_USR=CaioIcy
+    # GitHub link
+    - GH_REF=github.com/CaioIcy/Dauphine.git
+    # Project name (no spaces)
+    - T_NAME_PROJECT=Dauphine
+    # This variable tells TravisCI to publish to gh-pages and Coveralls:
+    - T_DO_PUBLISH_GH_COV=Yes
+    # Valgrind run of the project will automatically close in a couple of seconds
+    - T_DO_TIMED_RUN=ON
+
+before_install:
+    - ./utils/travis/before_install.sh
+
+install:
+    - ./utils/travis/install.sh
+
+script: ./build.sh debug
+
+after_success:
+    - ./utils/travis/after_success.sh
