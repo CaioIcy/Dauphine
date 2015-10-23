@@ -13,12 +13,19 @@
 % Aceitação (ACE).
 % Tipo: Tipo de teste a ser aplicado no produto ou componente de produto.]
 
-\begin{table}[H]
+Os itens de teste serão divididos em módulos da arquitetura por trás do Dauphine (audio, core, engine, graphics, input, util). 
+
+\begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|l|}
+\begin{tabular}{|p{1.3cm}|p{3.4cm}|p{3.4cm}|p{3.4cm}|p{1.2cm}|p{2.5cm}|}
 \hline
 \textbf{Item de Teste} & \textbf{Potencial Modo de Falha} & \textbf{Potencial Efeito da Falha} & \textbf{Potencial Causa da Falha} & \textbf{Níveis} & \textbf{Tipo} \\ \hline
- 		&		&		&		&		&               \\ \hline
+audio	& Arquivo de áudio não carregado & O jogo não toca os áudios necessários & Falha na escrita do nome do arquivo de áudio no código ou nos scripts, ou arquivo de áudio não se encontra no local desejado & UNI & Confiabilidade \\ \hline
+core	& Sistemas da libSDL não conseguem ser ligados & O programa se fecha & Programa mal configurado ou bibliotecas não configuradas & UNI & Confiabilidade \\ \hline
+engine	& Máquina de estados finita (FSM) dos estados do jogo não funcionam & Jogo não roda na ordem desejada & Código duplicado e confuso & UNI & Desempenho \\ \hline
+graphics& Falha na animação dos sprites & Propagação do erro para as outras animações & Variável global que controla o tempo de animação & UNI & Confiabilidade \\ \hline
+input	& Falha no reconhecimento de um joystick & O único meio de controle se torna o teclado, caso disponível & API confusa ou joystick não configurado corretamente & UNI & Confiabilidade \\ \hline
+util	& Scripts LUA não carregados & O programa se fecha & Problemas com API do LUA & UNI & Confiabilidade \\ \hline
 \end{tabular}
 \caption{Os itens de teste.}
 \label{itens_teste}
