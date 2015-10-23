@@ -8,7 +8,7 @@ function attention_echo {
 }
 
 # Default project name (no spaces)
-NAME_PROJECT="Default_Project_Name"
+NAME_PROJECT="Dauphine"
 # If there is a T_NAME_PROJECT, assign it to NAME_PROJECT
 if [ ! -z $T_NAME_PROJECT ]
 then
@@ -188,11 +188,11 @@ popd
 # If the first argument is what we want
 if [ ! -z $T_DO_PUBLISH_GH_COV ] && [ "$T_DO_PUBLISH_GH_COV" == "Yes" ]
 then
-	attention_echo "cpp-coveralls"
+	#attention_echo "cpp-coveralls"
 
 	# Publish to Coveralls
-	coveralls --verbose\
-		--root ${DIR_PROJECT_ROOT} -E ".*externals*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
+	#coveralls --verbose\
+	#	--root ${DIR_PROJECT_ROOT} -E ".*externals*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
 
 	# Publish Doxygen to gh-pages
 	publish_to_gh_pages
