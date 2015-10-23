@@ -1,4 +1,4 @@
-TARGET = trabalho_verival.pdf
+TARGET = relatorio_final.pdf
 
 BIBTEX = bibtex
 LATEX = latex
@@ -22,7 +22,7 @@ EDITAVEIS_SOURCES = informacoes.tex\
 
 EDITAVEIS_FILES = $(addprefix $(EDITAVEIS_DIR)/, $(EDITAVEIS_SOURCES))
 
-MAIN_FILE = trabalho_verival.tex
+MAIN_FILE = relatorio_final.tex
 DVI_FILE  = $(addsuffix .dvi, $(basename $(MAIN_FILE)))
 AUX_FILE  = $(addsuffix .aux, $(basename $(MAIN_FILE)))
 PS_FILE   = $(addsuffix .ps, $(basename $(MAIN_FILE)))
@@ -47,7 +47,7 @@ $(TARGET): $(MAIN_FILE) $(SOURCES) bibliografia.bib
 clean:
 	rm -f *~ *.dvi *.ps *.backup *.aux *.log
 	rm -f *.lof *.lot *.bbl *.blg *.brf *.toc *.idx
-	rm -f *.pdf
+	# rm -f *.pdf
 	
 dist: clean
 	tar vczf verival-fga-latex-$(VERSION).tar.gz *
