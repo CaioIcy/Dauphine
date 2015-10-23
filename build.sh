@@ -123,6 +123,9 @@ function prepare_build {
 function clean {
 	echo "Cleaning build/ folder..."
 	rm -rf build/
+	rm -f Dauphine_exec
+	rm -f Dauphine_GTest
+	rm -f *.dauphine
 	success_exit
 }
 
