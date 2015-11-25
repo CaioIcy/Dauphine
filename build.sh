@@ -80,7 +80,7 @@ function build {
 
 	# Copy the executable to root, instead of copying the entire assets folder to build/src/
 	cp ./src/*_exec ../
-	cp ./test/*_GTest ../
+	cp ./test/*_Test ../
 
 	popd
 	success_exit

@@ -3,31 +3,34 @@ message("\n*** test/ subdir")
 enable_testing()
 
 # Has project(gtest)
-set(GtestAndVersion gtest-1.7.0)
-add_subdirectory(../${ExternalLibsDir}/${GtestAndVersion} "${CMAKE_CURRENT_BINARY_DIR}/${ExternalLibsDir}/${GtestAndVersion}")
+# set(GtestAndVersion gtest-1.7.0)
+# add_subdirectory(../${ExternalLibsDir}/${GtestAndVersion} "${CMAKE_CURRENT_BINARY_DIR}/${ExternalLibsDir}/${GtestAndVersion}")
 
 # gtest_SOURCE_DIR is available due to project(gtest)
 include_directories(
-	${gtest_SOURCE_DIR}/include
-	${gtest_SOURCE_DIR}
+	# ${gtest_SOURCE_DIR}/include
+	# ${gtest_SOURCE_DIR}
 	${PROJECT_SOURCE_DIR}/src # Used to be '/include', but is now '/src' due to remodeling of the project structure
+	/usr/include/CppUTest
 )
 
 # tests definition
-set(GtestTarget ${MyProjectName}_GTest)
+set(GtestTarget ${MyProjectName}_Test)
 
 # Getting the test files
 message(AUTHOR_WARNING "Getting test source files by using glob")
 file(GLOB_RECURSE TESTS_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
 
-add_executable(${GtestTarget} ${TESTS_FILES})
+add_executable(${GtestTarget} main.cpp)
 set_target_properties(${GtestTarget} PROPERTIES COMPILE_FLAGS "${FLAGS_MY_PROJECT}")
 target_link_libraries(${GtestTarget} )
 
 target_link_libraries(${GtestTarget}
 	${MyProjectLib}
-	gtest
-	gtest_main
+	# gtest
+	# gtest_main
+	CppUTest
+	CppUTestExt
 )
 
 if(CMAKE_COMPILER_IS_GNUC OR CMAKE_COMPILER_IS_GNUCXX)
