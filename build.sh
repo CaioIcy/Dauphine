@@ -99,22 +99,33 @@ function prepare_build {
 	rm -f ${DIR_BUILD}/CMakeCache.txt
 
 	# $(LIB_DIR)/libtinyxml.a:
-	echo "--- Creating libtinyxml.a ..."
-	cd externals/tinyxml
-	make
-	ar rcs libtinyxml.a *.o
-	mv libtinyxml.a ../
-	make clean
-	cd ../..
-	echo "--- Done."
-
+	if [ ! -f ./externals/libtinyxml.a ]
+	then
+		echo "--- Creating libtinyxml.a ..."
+		cd externals/tinyxml
+		make
+		ar rcs libtinyxml.a *.o
+		pwd
+		mv libtinyxml.a ../
+		make clean
+		cd ../..
+		echo "--- Done."
+	else
+		echo "libtinyxml.a exists! Not building..."
+	fi
+	
 	# $(LIB_DIR)/libtmxparser.a:
-	echo --- Creating libtmxparser.a ...
-	cd externals/
-	make -f Makefile.tmxparser
-	make -f Makefile.tmxparser clean
-	cd ..
-	echo --- Done.
+	if [ ! -f ./externals/libtmxparser.a ]
+	then
+		echo --- Creating libtmxparser.a ...
+		cd externals/
+		make -f Makefile.tmxparser
+		make -f Makefile.tmxparser clean
+		cd ..
+		echo --- Done.
+	else
+		echo "libtmxparser.a exists! Not building..."
+	fi
 
 	mkdir -p ${DIR_BUILD} || exit $?
 	pushd ${DIR_BUILD}
