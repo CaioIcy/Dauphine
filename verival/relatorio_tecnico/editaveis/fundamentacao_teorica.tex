@@ -1,0 +1,26 @@
+\chapter[Fundamentação Teórica]{Fundamentação Teórica}
+
+\section{Integração Contínua}
+
+\citeonline{kentbeck} definiu integração contínua como a entrega do código ser feita continuamente assim que desenvolvido e com todos os testes passando. A mudança de paradigma que a integração contínua provê, como dita por \citeonline{humblefarley}, dá ao desenvolvedor certeza que o \textit{software} funciona com cada mudança adicionada. No contexto de \textit{software} livre, diversas mudanças de diversas pessoas são normalmente aceitas no contexto de contribuição, como dizem as 4 liberdades do \textit{software} livre \cite{softwarelivre}. Por isso, a integração contínua é importante para que o produto mantenha-se funcionando.
+
+\section{Métricas de Código Fonte}
+
+Segundo \citeonline{mills1988}, métrica de \textit{software} lida com a medição do produto e do processo de \textit{software}. No trabalho da disciplina, serão coletadas apenas métricas de código fonte que seguirão os intervalos sugeridos na tese de doutorado do Dr. Paulo Meirelles. Dentre as métricas que \citeonline{prmm} selecionou, foram escolhidas as seguintes métricas
+
+\begin{itemize}
+\item \textbf{AMLOC }(\textit{Average Method Lines of Code} - Média de linhas de código por método): A medida indica a quantidade de linhas de código por método, indicando se o código está bem distribuído ou não, auxiliando assim na manutenção do mesmo. De 0 a 8 é considerado excelente; entre 9 a 19, bom; entre 20 a 37, ruim; e acima de 37 é considerado preocupante.
+\item \textbf{NOM }(\textit{Number Of Methods} - Número de métodos): Em geral, classes com muitos métodos não são muito coesas, dificultando assim o reuso das mesmas \cite{lorenzkidd}. De 0 a 10 é considerado excelente; entre 11 a 17, bom; entre 18 a 27, ruim; e acima de 27 é considerado preocupante.
+\item \textbf{NPM }(\textit{Number of Public Methods} - Número de métodos públicos): Boas práticas de programação dizem que o número de métodos em cada classe não pode ser muito grande \cite{beck}. Valores altos dessa métrica indicam que uma classe possui muitas responsabilidade por possuirem muitos métodos. De 0 a 10 é considerado bom; entre 10 a 40, regular; e acima de 40 é considerado ruim.
+\item \textbf{ANPM }(\textit{Average Number of Parameters per Method} - Média de parâmetros por método): Se um método possui essa medida muito alta, este método pode ter mais de uma função e deve ser refatorado. De 0 a 2 é considerado excelente; entre 2 a 3, bom; entre 3 a 5, ruim; e acima de 5 é considerado preocupante.
+\item \textbf{ACCM }(\textit{Average Ciclomatic Complexity per Method} - Média de complexidade ciclomática por métodos): Esta métrica representa um grafo de fluxo de controle. \citeonline{myers}, \citeonline{mccabe} e \citeonline{stetter} propuseram várias fórmulas de calcular a complexidade ciclomática desse grafo. De 0 a 3 é considerado excelente; entre 3 a 5, bom; entre 5 a 7, ruim; e acima de 7 é considerado preocupante.
+\item \textbf{LCOM }(\textit{Lack of Cohesion in Methods} - Ausência de coesão em métodos): Originalmente proposta por \citeonline{chidamberkemerer} e depois revista por \citeonline{hitzmontazeri}, o LCOM4 mede a coesão nos métodos. Métodos pouco coesos são pouco reutilizáveis e ferem as boas práticas de programação \cite{beck}. De 0 a 2 é considerado bom; entre 2 a 5, regular; e acima de 5 é considerado ruim.
+\end{itemize}
+
+\section{Testes de Software}
+
+Apenas testando exaustivamente pode-se mostrar que um programa é livre de defeitos. Porém, testar exaustivamente é impossível \citeonline{sommerville}. Para se guiar as estratégias de teste são definidas abordagens à serem utilizadas na seleção dos testes, por exemplo: Todas as funções acessadas por menus devem ser testadas, quando entradas do usuário são requeridas, todas as funções devem ser testadas com entradas corretas e incorretas. Segundo \citeonline{artoftest} testar é o processo de executar um programa com a intenção de encontrar erros.
+
+\begin{itemize}
+\item \textbf{Testes Unitários}: São testes que verificam se uma parte específica do código, costumeiramente a nível de função, está funcionando corretamente. Em um ambiente orientado a objetos é usualmente a nível de classes e a mínima unidade de testes inclui construtores e destrutores. O objetivo do teste unitário é assegurar que cada unidade está funcionando de acordo com sua especificação funcional. Estes tipos de testes são frequentemente escritos por desenvolvedores quando trabalham no código, para assegurar que a função específica está executando como esperado. Uma função deve ter muitos testes para dar cobertura a todos os caminhos possíveis do seu código. Sozinho, o teste unitário não pode verificar a funcionalidade de uma parte do software, mas em contrapartida é usado para assegurar que os blocos constituintes do software trabalham independentes dos demais.
+\end{itemize}

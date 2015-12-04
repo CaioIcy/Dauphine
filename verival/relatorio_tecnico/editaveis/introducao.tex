@@ -2,16 +2,34 @@
 
 \section{Resumo da Proposta}
 % [Descrever o resumo da proposta de desenvolvimento / uso de ferramentas.]
-Atualmente, o desenvolvimento de jogos indie tem um grande déficit na área de testes. A proposta deste trabalho é analisar as dificuldades de fazer testes unitários em um jogo. Para isso, será utilizado o jogo Dauphine, desenvolvido na disciplina de Introdução a Jogos Eletrônicos da UnB-FGA. Para a elaboração dos testes unitários, a ferramenta Google Test está sendo utilizada. Após determinadas baterias de testes, a qualidade do código-fonte seria avaliada utilizando o Analizo para análise estática, para poder observar os benefícios dos testes espelhadas nas métricas coletadas. Também está sendo utilizado o Travis CI para integração contínua do projeto. Após a elaboração dos testes e devidamente registradas as dificuldades do processo, serão entrevistados desenvolvedores profissionais da área para saber como eles resolvem esses problemas e outros possíveis probemas ou até mesmo se eles chegam neles.
+Atualmente, o desenvolvimento de jogos indie tem um grande déficit na área de testes. A proposta deste trabalho é analisar as dificuldades de fazer testes unitários em um jogo. Para isso, será utilizado o jogo Dauphine, desenvolvido na disciplina de Introdução a Jogos Eletrônicos da UnB-FGA.
+
+\section{Metodologia}
+
+Para a elaboração dos testes unitários, a ferramenta Google Test está sendo utilizada. Após determinadas baterias de testes, a qualidade do código-fonte seria avaliada utilizando o Analizo para análise estática, para poder observar os benefícios dos testes espelhadas nas métricas coletadas. Também está sendo utilizado o Travis CI para integração contínua do projeto. Após a elaboração dos testes e devidamente registradas as dificuldades do processo, serão entrevistados desenvolvedores profissionais da área para saber como eles resolvem esses problemas e outros possíveis probemas ou até mesmo se eles chegam neles.
 
 \section{Dificuldades Encontradas}
 % [Listar as dificuldades encontradas, de qualquer natureza, durante o desenvolvimento do trabalho.]
-As dificuldades encontradas no trabalho foram:
-\begin{itemize}
+Algumas dificuldades foram encontradas durante a execução deste trabalho nessa sessão são elencadas as principais.
+
+\subsection{Cobertura}
 % Ao executar o trabalho proposto, percebeu-se que realizar testes unitários em jogos eletrônicos é uma tarefa difícil. A dependência de todos os módulos é muito grande. Durante o período da disciplina, foi observado que a capacidade do jogo ser testado está diretamente ligado a qualidade do código originalmente desenvolvido.
-\item \textbf{Cobertura:} Não foram encontradas ferramentas viáveis de serem utilizadas que gerassem um relatório de cobertura de testes unitários.
-% Foram estudadas diversas ferramentas para obter a cobertura, porém nenhuma das estudadas foram capazes de realizar a instrumentação do código para que pudesse ser obtido o valor da cobertura.
-\item \textbf{Qualidade:} A má qualidade do código do jogo Dauphine impossibilitou que os testes fossem implementados da maneira planejada. Por exemplo, certos acoplamentos são inevitáveis na construção da \textit{engine} do jogo.
-% Durante o período da disciplina, foi observado que a capacidade do jogo ser testado está diretamente ligado a qualidade do código originalmente desenvolvido.
-\item \textbf{Referencial Teórico:} A escassez de material de cunho acadêmico em relação ao desenvolvimento de jogos foi, apesar de esperado, prejudicial.
+
+Não foram encontradas ferramentas viáveis de serem utilizadas que gerassem um relatório de cobertura de testes unitários. Dentre as ferramentas investigadas seguem as principais.
+
+\begin{itemize}
+\item \textbf{Cpputest:} (\textit{Open Source}) Não mede cobertura, é só um \textit{framework} de testes unitários escritos em C++ mas usados para projetos C/C++.
+\item \textbf{BullseyeCoverage:} (Proprietário) É um analisador de cobertura usado para melhorar a qualidade do software em sistemas vitais como aplicações de empresas, controle de indústria, médico, automotiva, comunicações, aeroespacial e defesa.
+\item \textbf{Semantic Designs C++:}  (Proprietário) Provê cobertura de testes para linguagens procedurais como C, C++, Java, C\#, PHP e diversas outras.
+\item \textbf{C++ Test Coverage Tool:}  (Proprietário)
+\item \textbf{Squish Coco:} (Proprietário) Usa instrumentação de código-fonte para analisar a aplicação. Nenhuma mudança no código é necessária.
 \end{itemize}
+
+As ferramentas acima, por serem proprietárias e algumas obsoletas, não puderam ser utilizadas no projeto pelo alto custo de suas licenças.
+
+\subsection {Qualidade}
+A má qualidade do código do jogo Dauphine impossibilitou que os testes fossem implementados da maneira planejada. Por exemplo, certos acoplamentos são inevitáveis na construção da \textit{engine} do jogo.
+% Durante o período da disciplina, foi observado que a capacidade do jogo ser testado está diretamente ligado a qualidade do código originalmente desenvolvido.
+\subsection {Referencial Teórico}
+A escassez de material de cunho acadêmico em relação ao desenvolvimento de jogos foi, apesar de esperado, prejudicial.
+

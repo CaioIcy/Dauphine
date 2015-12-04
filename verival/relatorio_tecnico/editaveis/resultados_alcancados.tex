@@ -1,5 +1,5 @@
 \chapter[Resultados Alcançados]{Resultados Alcançados}
-% [Em relação aos objetivos planejados, faça uma análise crítica dos resultados que foram alcançados. 
+% [Em relação aos objetivos planejados, faça uma análise crítica dos resultados que foram alcançados.
 % 	Todos os objetivos foram alcançados?
 % 	Quais foram parcialmente alcançados? Por que?
 % 	O produto é relevante? Por que?
@@ -11,16 +11,26 @@ Nesta seção, serão mostrados os resultados obtidos durante a execução do tr
 \section{Resultados do Objetivo Principal}
 
 % Entender as dificuldades de testes unitários especificamente na área de desenvolvimento de jogos.
-No decorrer do desenvolvimento do trabalho, foi concluído que testes unitários em jogos, apesar de necessários, são difíceis de serem realizados e demandam um tempo grande, muitas vezes comprometendo o tempo de entrega do jogo. Por isso, os testes unitários infelizmente costumam ser negligenciados pelas equipes de desenvolvimento. 
+No decorrer do desenvolvimento do trabalho, foi concluído que testes unitários em jogos, apesar de necessários, são difíceis de serem realizados e demandam um tempo grande, muitas vezes comprometendo o tempo de entrega do jogo. Por isso, os testes unitários infelizmente costumam ser negligenciados pelas equipes de desenvolvimento.
 
 \section{Resultados dos Objetivos Específicos}
 
-Apesar da ferramenta de integração contínua (\textit{Travis CI}) estar devidamente configurada, seu uso não foi possível devido ao fato da equipe ter falhado em realizar os testes unitários. 
+Apesar da ferramenta de integração contínua (\textit{Travis CI}) estar devidamente configurada, seu uso não foi possível devido ao fato da equipe ter falhado em realizar os testes unitários.
 
 A proposta de acompanhamento de evolução da qualidade através da ferramenta \textit{Analizo} também foi comprometido devido ao fato de que não houveram refatorações originadas de testes unitários falhando, uma vez que estes não existiram.
 
 Foram estudadas diversas ferramentas para obter a cobertura, porém nenhuma das estudadas foram capazes de realizar a instrumentação do código para que pudesse ser obtido o valor da cobertura.
 
-Devido às dificuldades descritas anteriormente, não foi possível obter uma cobertura de 60\% do código. 
+Devido às dificuldades descritas anteriormente, não foi possível obter uma cobertura de 60\% do código.
 
 Ao realizar um questionário com desenvolvedores profissionais da área, foi observado que, além dos que não sabem nem o que é um teste automatizado, a maioria não implementa testes unitários em seus códigos. Assim, a equipe não pode avaliar como os desenvolvedores profissionais resolviam os problemas encontrados, pois os mesmos nem ao menos chegavam nessas dificuldades.
+
+\chapter[Conclusão]{Conclusão}
+
+Testes unitários são importantes para o desenvolvimento de qualquer software, para facilitar a manutenção sendo ela corretiva ou evolutiva, para que o desenvolvedor possa com certo nível de confiabilidade garantir que ao desenvolver novas funcionalidades as outras continuem funcionando normalmente, ou ao refatorar o código não se perca o controle da funcionalidade.
+
+No contexto de jogos eletrônicos as motivações explicitadas se mantém, porém a complexidade de realizar tais testes pode ser agravada devido ao alto acoplamento inerente à arquitetura de jogos \cite{gregory} e a falta de frameworks específicos para testes em jogos. Isso eleva o tempo de implementação dos teste.
+
+Apesar dos desenvolvedores profissionais de jogos eletrônicos terem uma bagagem teórica sobre testes unitários, poucos desenvolvedores alegam realizar esse tipo de teste, principalmente pelo motivo citado anteriormente. O reflexo disso é a quantidade de \textit{bugs} que passam para a versão final do jogo.
+
+Assim como qualquer outro tipo de \textit{software}, a qualidade do código-fonte influencia na facilidade de testar. Códigos complexos são mais difíceis de testar.
