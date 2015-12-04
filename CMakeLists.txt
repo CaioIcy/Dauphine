@@ -18,7 +18,7 @@ include("${MY_CMAKE_DIR}/settings.cmake")
 include("${MY_CMAKE_DIR}/options.cmake")
 include("${MY_CMAKE_DIR}/cpp.cmake")
 include("${MY_CMAKE_DIR}/cpack.cmake")
-include("${MY_CMAKE_DIR}/doxygen.cmake")
+# include("${MY_CMAKE_DIR}/doxygen.cmake")
 
 ##################################################
 

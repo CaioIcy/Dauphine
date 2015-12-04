@@ -6,9 +6,13 @@
 /**
 * Class in control of animating a sprite.
 */
-class Animation{
+class Animation {
 
 	public:
+		#ifdef NEED_TESTHELPER
+		friend class Animation_TestHelper;
+		#endif
+
 		/**
 		* The constructor.
 		* Initializes all attributes.
